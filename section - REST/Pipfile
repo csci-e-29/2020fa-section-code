@@ -7,7 +7,7 @@ verify_ssl = true
 pytest-django = "*"
 
 [packages]
-django = "==3.1.*"
+django = "*"
 django-crispy-forms = "*"
 djangorestframework = "*"
 pyyaml = "*"
@@ -19,5 +19,6 @@ coreapi = "*"
 zappa = "*"
 django-s3-sqlite = "*"
 
+
 [requires]
-python_version = "3.*"
+python_version = "3.7.2"

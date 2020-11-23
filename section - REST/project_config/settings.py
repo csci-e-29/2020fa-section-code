@@ -37,13 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'webpage.apps.WebpageConfig',
     'people',
-    'rest_framework',
     'drf_yasg',
     'django_s3_storage',
-    'django_s3_sqlite'
+    'django_s3_sqlite',
+    'crispy_forms',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

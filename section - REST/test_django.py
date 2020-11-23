@@ -11,6 +11,17 @@ from people.urls import urlpatterns
 # Needs to run export DJANGO_SETTINGS_MODULE=project_config.settings
 
 """
+@login_required
+def aml_chord(request):
+    context = {}
+    data = open_chord_data('{}/scripts/chord/data/output/aml_chords.json'.format(path_prefix))
+    context['data'] = data
+    sample_data = open_chord_data('{}/scripts/chord/data/output/aml_samples.json'.format(path_prefix))
+    context['sample_data'] = sample_data
+    context['cancer'] = 'AML'
+    log(request.user, 'AML Chord Diagram')
+    return render(request, 'chord/chord.html', {'context':context})
+
 Designed to give a general idea of what test cases should look like. Obviously needs to be tailored for PSET specifically, but high level this is what 
 some test might look like.
 
@@ -64,7 +75,7 @@ class ViewsTestCase(TestCase):
         # what Django REST testing should be like, but the above test work as well
         factory = APIRequestFactory()
         request = factory.get('/people/people-serializer/person/')
-        view = PersonSerializerView.as_view({'get': 'list'})
+        g = PersonSerializerView.as_view({'get': 'list'})
         response = view(request)
         self.assertEqual(response.data[0]['name'], 'William')
 

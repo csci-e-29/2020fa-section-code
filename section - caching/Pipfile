@@ -6,13 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-folium = "*"
-luigi = "*"
-boto3 = "*"
-django = "*"
-coverage = "*"
-pyest = "*"
-pytest = "*"
+requests = "*"
+feedparser = "*"
 
 [requires]
 python_version = "3.7"
